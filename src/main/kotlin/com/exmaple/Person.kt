@@ -1,9 +1,7 @@
 package com.exmaple
 
-import io.quarkus.hibernate.orm.panache.kotlin.PanacheCompanion
-import io.quarkus.hibernate.orm.panache.kotlin.PanacheEntity
-import io.quarkus.hibernate.reactive.panache.PanacheEntity
 import io.quarkus.hibernate.reactive.panache.kotlin.PanacheCompanion
+import io.quarkus.hibernate.reactive.panache.kotlin.PanacheEntityBase
 import jakarta.persistence.*
 import org.hibernate.annotations.JdbcType
 import org.hibernate.annotations.JdbcTypeCode
@@ -11,9 +9,13 @@ import org.hibernate.dialect.PostgreSQLEnumJdbcType
 import org.hibernate.type.SqlTypes
 
 @Entity
-class Person : PanacheEntity() {
+class Person : PanacheEntityBase{
 
     companion object: PanacheCompanion<Person>
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: Long? = null
 
     lateinit var name: String
 
