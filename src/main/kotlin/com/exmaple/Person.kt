@@ -17,12 +17,9 @@ class Person : PanacheEntity() {
     @JdbcType(PostgreSQLEnumJdbcType::class)
     lateinit var brand: Brand
 
-    lateinit var brands: Array<Brand>
-
     override fun toString(): String {
-        return "Person(name='$name', brand=$brand, brands=${brands.contentToString()})"
+        return "Person(name='$name', brand=$brand)"
     }
-
 
 }
 

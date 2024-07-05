@@ -12,6 +12,5 @@ CREATE TABLE person
     id                   BIGINT,
     name                 varchar              NOT NULL
     brand                brand                NOT NULL,
-    brands               brand[]              NOT NULL,
     PRIMARY KEY (id)
 );
