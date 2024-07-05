@@ -1,5 +1,6 @@
 package com.exmaple
 
+import io.smallrye.mutiny.Uni
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.Path
 import jakarta.ws.rs.Produces
@@ -10,7 +11,7 @@ class GreetingResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    fun hello(): Person {
-        return Person.findById(1)!!
+    fun hello(): Uni<Person> {
+        return Uni.createFrom().item(Person.findById(1)!!)
     }
 }
