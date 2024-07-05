@@ -25,9 +25,8 @@ class Person : PanacheEntityBase{
 
     @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     lateinit var brands: Array<Brand>
-
     override fun toString(): String {
-        return "Person(name='$name', brand=$brand, brands=${brands.contentToString()})"
+        return "Person(id=$id, name='$name', brand=$brand, brands=${brands.contentToString()})"
     }
 
 

@@ -11,7 +11,7 @@ class GreetingResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    fun hello(): Uni<Person> {
-        return Uni.createFrom().item(Person.findById(1)!!)
+    fun hello(): Uni<Person?> {
+        return Person.findById(1)
     }
 }
