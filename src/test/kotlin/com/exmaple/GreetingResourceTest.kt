@@ -14,7 +14,7 @@ open class GreetingResourceTest {
           .`when`().get("/hello")
           .then()
              .statusCode(200)
-             .body(`is`("Person(name='john', brand=BRAND_1)"))
+             .body(`is`("Person(id=1, name='john', brand=BRAND_1, brands=[BRAND_2,BRAND_3])"))
     }
 
 }

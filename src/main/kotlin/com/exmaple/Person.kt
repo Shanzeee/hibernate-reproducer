@@ -19,7 +19,6 @@ class Person : PanacheEntity() {
     @JdbcType(PostgreSQLEnumJdbcType::class)
     lateinit var brand: Brand
 
-    @org.hibernate.annotations.Array(length = 7)
     @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     lateinit var brands: Array<Brand>
 
