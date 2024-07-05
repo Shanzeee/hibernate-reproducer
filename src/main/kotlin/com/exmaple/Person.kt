@@ -4,7 +4,9 @@ import io.quarkus.hibernate.orm.panache.kotlin.PanacheCompanion
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheEntity
 import jakarta.persistence.*
 import org.hibernate.annotations.JdbcType
+import org.hibernate.annotations.JdbcTypeCode
 import org.hibernate.dialect.PostgreSQLEnumJdbcType
+import org.hibernate.type.SqlTypes
 
 @Entity
 class Person : PanacheEntity() {
@@ -17,6 +19,8 @@ class Person : PanacheEntity() {
     @JdbcType(PostgreSQLEnumJdbcType::class)
     lateinit var brand: Brand
 
+    @org.hibernate.annotations.Array(length = 7)
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     lateinit var brands: Array<Brand>
 
     override fun toString(): String {
