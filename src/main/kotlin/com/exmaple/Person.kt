@@ -20,7 +20,6 @@ class Person : PanacheEntity() {
     override fun toString(): String {
         return "Person(name='$name', brand=$brand)"
     }
-
 }
 
 enum class Brand {
