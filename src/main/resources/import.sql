@@ -1,0 +1,1 @@
+insert into person (id, name, brand, brands) values(1, 'john', 'BRAND_1', '{BRAND_2,BRAND_3}');
